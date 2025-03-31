@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML5 Elements and Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .required:after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Advanced HTML5 Elements Demonstration</h1>
+    </header>
+
+    <main>
+        <!-- Ordered List with Roman Numerals -->
+        <section>
+            <h2>Steps to Create a Website (Ordered List with Roman Numerals)</h2>
+            <ol type="I">
+                <li>Plan your website structure</li>
+                <li>Create HTML skeleton</li>
+                <li>Add CSS styling</li>
+                <li>Implement JavaScript functionality</li>
+                <li>Test across browsers</li>
+                <li>Deploy to a web server</li>
+            </ol>
+        </section>
+
+        <!-- External Image from Pexels.com -->
+        <section>
+            <h2>Sample Image from Pexels</h2>
+            <figure>
+                <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg" 
+                     alt="Computer setup with coding on screen" 
+                     width="800"
+                     height="450">
+                <figcaption>Photo by Pixabay from Pexels</figcaption>
+            </figure>
+        </section>
+
+        <!-- Contacts Table -->
+        <section>
+            <h2>Contact List (Table)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>123 Main St, Anytown</td>
+                        <td>555-0101</td>
+                        <td>john.smith@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Sarah Johnson</td>
+                        <td>456 Oak Ave, Somewhere</td>
+                        <td>555-0102</td>
+                        <td>sarah.j@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Brown</td>
+                        <td>789 Pine Rd, Nowhere</td>
+                        <td>555-0103</td>
+                        <td>m.brown@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Emily Davis</td>
+                        <td>321 Elm Blvd, Anywhere</td>
+                        <td>555-0104</td>
+                        <td>emily.d@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>David Wilson</td>
+                        <td>654 Maple Ln, Everywhere</td>
+                        <td>555-0105</td>
+                        <td>dwilson@gmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Registration Form -->
+        <section>
+            <h2>Registration Form</h2>
+            <form id="registrationForm" novalidate>
+                <!-- Personal Information -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="fullName" class="required">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" 
+                               placeholder="Enter your full name" 
+                               required 
+                               minlength="3"
+                               pattern="[A-Za-z ]+">
+                        <small>Must be at least 3 characters (letters and spaces only)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required">Email Address</label>
+                        <input type="email" id="email" name="email" 
+                               placeholder="your.email@gmail.com" 
+                               required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="required">Password</label>
+                        <input type="password" id="password" name="password" 
+                               placeholder="Create a password" 
+                               required 
+                               minlength="8"
+                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <small>Must be at least 8 characters with 1 uppercase, 1 lowercase, and 1 number</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dob" class="required">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" 
+                               required 
+                               max="2005-12-31">
+                    </div>
+                </fieldset>
+                
+                <!-- Additional Information -->
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Select your country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Subscription Plan</label>
+                        <div>
+                            <input type="radio" id="planFree" name="subscriptionPlan" value="free" checked>
+                            <label for="planFree">Free</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="planBasic" name="subscriptionPlan" value="basic">
+                            <label for="planBasic">Basic ($9.99/month)</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="planPremium" name="subscriptionPlan" value="premium">
+                            <label for="planPremium">Premium ($19.99/month)</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Interests (Select all that apply)</label>
+                        <div>
+                            <input type="checkbox" id="interestTech" name="interests" value="technology">
+                            <label for="interestTech">Technology</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="interestSports" name="interests" value="sports">
+                            <label for="interestSports">Sports</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="interestMusic" name="interests" value="music">
+                            <label for="interestMusic">Music</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="interestTravel" name="interests" value="travel">
+                            <label for="interestTravel">Travel</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" name="bio" 
+                                  placeholder="Tell us about yourself..." 
+                                  rows="4"></textarea>
+                    </div>
+                </fieldset>
+                
+                <!-- Terms and Submit -->
+                <div class="form-group">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                    <label for="agreeTerms" class="required">I agree to the terms and conditions</label>
+                </div>
+                
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Advanced HTML5 Demo. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Form validation feedback
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            const form = event.target;
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                alert('Please fill out all required fields correctly.');
+            }
+            form.classList.add('was-validated');
+        });
+    </script>
+</body>
+</html>
